@@ -6,3 +6,4 @@ public class Main {
         System.out.println("Nema ništa u mainu, pokrenite testove!");
     }
 }
+
