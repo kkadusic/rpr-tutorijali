@@ -23,8 +23,17 @@ public class Interval {
         if ((v>pocetna || Math.abs(v-pocetna)<0.000001)) return true;
         return false;
     }
+    
+    public Interval intersect(Interval i){
+        if (i.pocetna > this.krajnja || this.pocetna > i.krajnja) return new Interval();
+        Interval n = new Interval(Math.max(this.pocetna,i.pocetna), Math.min(this.krajnja,i.krajnja),false,false);
+        if(this.pocetna>i.pocetna) n.pocetna_int = this.pocetna_int;
+        else n.pocetna_int = i.pocetna_int;
 
-
+        if(this.krajnja < i.krajnja) n.krajnja_int = this.krajnja_int;
+        else n.krajnja_int = i.krajnja_int;
+        return n;
+    }
 
     public boolean equals(Interval i){
         if ((pocetna_int == i.pocetna_int && krajnja_int == i.krajnja_int)
