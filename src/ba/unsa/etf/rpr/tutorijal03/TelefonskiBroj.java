@@ -9,5 +9,4 @@ public abstract class TelefonskiBroj implements Comparable<TelefonskiBroj> {
     public int compareTo (TelefonskiBroj t){
         return this.ispisi().compareTo(t.ispisi());
     }
-
 }

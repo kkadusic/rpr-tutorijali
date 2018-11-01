@@ -11,4 +11,14 @@ public class Program {
         MobilniBroj mobilni = new MobilniBroj(n, s);
         return mobilni;
     }
+
+    public MedunarodniBroj unesiMedunarodni() {
+        System.out.println("Unesite broj:\n");
+        Scanner ulaz = new Scanner(System.in);
+        String s1 = ulaz.nextLine();
+        System.out.println("Unesite drzavu;\n");
+        String s2 = ulaz.nextLine();
+        MedunarodniBroj medunarodni = new MedunarodniBroj(s2, s1);
+        return medunarodni;
+    }
 }
