@@ -34,6 +34,10 @@ public class Interval {
         else n.krajnja_int = i.krajnja_int;
         return n;
     }
+    
+     public static Interval intersect(Interval a, Interval b){
+        return a.intersect(b);
+    }
 
     public boolean equals(Interval i){
         if ((pocetna_int == i.pocetna_int && krajnja_int == i.krajnja_int)
