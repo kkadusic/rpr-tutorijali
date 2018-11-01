@@ -22,4 +22,15 @@ public class Imenik {
         }
         return "";
     }
+    public String naSlovo(char z) {
+        String novi = "";
+        int i = 1;
+        for (Map.Entry<String, TelefonskiBroj> a : popis.entrySet()) {
+            if (a.getKey().charAt(0) == z) {
+                novi += i +". "+ a.getKey() +" - "+ a.getValue().ispisi() + "\n";
+                i++;
+            }
+        }
+        return novi;
+    }
 }
