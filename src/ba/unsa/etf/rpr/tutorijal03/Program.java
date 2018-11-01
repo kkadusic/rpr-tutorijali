@@ -2,7 +2,6 @@ package ba.unsa.etf.rpr.tutorijal03;
 import java.util.*;
 
 public class Program {
-    
     public MobilniBroj unesiMobilni() {
         System.out.println("Unesite mobilni broj:\n");
         Scanner ulaz = new Scanner(System.in);
