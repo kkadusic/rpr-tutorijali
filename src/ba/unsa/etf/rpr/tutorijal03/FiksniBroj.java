@@ -15,7 +15,7 @@ public class FiksniBroj extends TelefonskiBroj {
         this.grad = grad;
         this.broj = broj;
 
-        s = "/";
+        s = "";
         switch (grad) {
             case SARAJEVO:
                 s += "030";
@@ -60,7 +60,7 @@ public class FiksniBroj extends TelefonskiBroj {
                 s += "Greska";
                 break;
         }
-        s += broj;
+        s += "/" + broj;
     }
 
     @Override
@@ -78,4 +78,6 @@ public class FiksniBroj extends TelefonskiBroj {
         FiksniBroj f = (FiksniBroj) o;
         return broj.equals(f.broj);
     }
+
+
 }
