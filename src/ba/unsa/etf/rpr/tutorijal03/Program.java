@@ -38,6 +38,9 @@ public class Program {
                 "2. Unesite medunarodni broj: \n" +
                 "3. Unesite fiksni broj: \n" +
                 "4. Dodavanje broja u imenik: \n" +
+                "5. Nadji broj osobe: \n" +
+                "6. Nadjite brojeve imena koji pocinju sa slovom: \n" +
+                "7. Imena osoba iz grada: \n" +
                            
         );
         switch(izbor) {
@@ -65,5 +68,25 @@ public class Program {
                 else if (broj == 2) imenik.dodaj(s, unesiMedunarodni());
                 else if (broj == 3) imenik.dodaj(s, unesiFiksni());
                 break;
+            case 5:
+                Scanner ulaz = new Scanner(System.in);
+                System.out.println("Unesite ime osobe ciji broj trazite:\n");
+                String osoba = ulaz.nextLine();
+                System.out.println(imenik.dajBroj(osoba));
+                break;
+            case 6:
+                Scanner ulaz = new Scanner(System.in);
+                System.out.println("Unesite pocetno slovo imena:\n");
+                char slovo = ulaz.next().charAt(0);
+                System.out.println(imenik.naSlovo(slovo));
+                break;
+            case 7:
+                Scanner ulaz = new Scanner(System.in);
+                System.out.println("Unesite redni broj grada: \n");
+                int n = ulaz.nextInt();
+                Set<String> s = new Set<> (imenik.izGrada(FiksniBroj.Grad.valueOf(n)));
+                System.out.println(s);
+                break;
         }
+        
 }
