@@ -22,6 +22,7 @@ public class Imenik {
         }
         return "";
     }
+    
     public String naSlovo(char z) {
         String novi = "";
         int i = 1;
@@ -32,5 +33,13 @@ public class Imenik {
             }
         }
         return novi;
+    }
+    
+    public Set<String> izGrada(Grad g){
+        TreeSet<String> s = new TreeSet<String>();
+        for (Map.Entry<String, TelefonskiBroj> x : popis.entrySet()) {
+            if (x.getValue().ispisi().substring(0,3).equals(g.getPozivni())) s.add(x.getKey());
+        }
+        return s;
     }
 }
