@@ -1,83 +1,28 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-public class FiksniBroj extends TelefonskiBroj {
-    private Grad grad;
+class FiksniBroj extends TelefonskiBroj {
     private String broj;
-
-    //fale jos neki gradovi
-    public enum Grad {
-        SARAJEVO, ODZAK, MAGLAJ, JAJCE, LIVNO, TUZLA, MOSTAR, BIHAC,
-        GORAZDE, GRUDE, BRCKO, BANJALUKA, PRIJEDOR
-    }
-
-    String s;
-    public FiksniBroj(Grad grad, String broj) {
-        this.grad = grad;
-        this.broj = broj;
-
-        s = "";
-        switch (grad) {
-            case SARAJEVO:
-                s += "030";
-                break;
-            case ODZAK:
-                s += "031";
-                break;
-            case MAGLAJ:
-                s += "032";
-                break;
-            case JAJCE:
-                s += "033";
-                break;
-            case LIVNO:
-                s += "034";
-                break;
-            case TUZLA:
-                s += "035";
-                break;
-            case MOSTAR:
-                s += "036";
-                break;
-            case BIHAC:
-                s += "037";
-                break;
-            case GORAZDE:
-                s += "038";
-                break;
-            case GRUDE:
-                s += "039";
-                break;
-            case BRCKO:
-                s += "050";
-                break;
-            case BANJALUKA:
-                s += "051";
-                break;
-            case PRIJEDOR:
-                s += "052";
-                break;
-            default:
-                s += "Greska";
-                break;
+    private Grad pozivniBroj;
+    public enum  Grad {
+        BUGOJNO(0), ODZAK(1), ZENICA(2), SARAJEVO(3), LIVNO(4), TUZLA(5), MOSTAR(6), BIHAC (7), GORAZDE(8), SIROKI_BRIJEG(9) ,BRCKO(10);
+        private int poziv;
+        Grad (int x) {
+            this.poziv=x;
         }
-        s += "/" + broj;
+        public int getPoziv () {
+            return this.poziv;
+        }
     }
-
+    public String [] pozivni = new String [] {"030","031","032","033","034","035","036","037", "038","039", "049"};
+    protected Grad grad;
+    public FiksniBroj (Grad grad, String broj) {
+        this.pozivniBroj = grad;  this.broj = broj;
+    }
+    public Grad getPozivni () { return pozivniBroj; }
     @Override
     public String ispisi() {
+        String s = new String();
+        s += pozivni[pozivniBroj.getPoziv()] + "/" + broj;
         return s;
     }
-
-    @Override
-    public int hashCode() {
-        return s.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        FiksniBroj f = (FiksniBroj) o;
-        return broj.equals(f.broj);
-    }
-
-
 }
