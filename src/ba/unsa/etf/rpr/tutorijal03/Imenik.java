@@ -2,16 +2,12 @@ package ba.unsa.etf.rpr.tutorijal03;
 import java.util.*;
 
 public class Imenik {
-    private HashMap<String, TelefonskiBroj> popis;
-
-    public Imenik() {
-        popis = new HashMap<>();
-    }
+    private HashMap<String, TelefonskiBroj> popis = new HashMap<>();
 
     public void dodaj(String ime, TelefonskiBroj broj) {
         popis.put(ime, broj);
     }
-
+    
     public String dajBroj(String ime) {
         return popis.get(ime).ispisi();
     }
@@ -35,10 +31,17 @@ public class Imenik {
         return novi;
     }
     
-    public Set<String> izGrada(Grad g){
-        TreeSet<String> s = new TreeSet<String>();
-        for (Map.Entry<String, TelefonskiBroj> x : popis.entrySet()) {
-            if (x.getValue().ispisi().substring(0,3).equals(g.getPozivni())) s.add(x.getKey());
+    public Set<String> izGrada(FiksniBroj.Grad g){
+        TreeSet<String> s = new TreeSet<>();
+        for(Map.Entry<String,TelefonskiBroj>  x : popis.entrySet()){
+            if(x.getValue() instanceof FiksniBroj && ((FiksniBroj) x.getValue()).getPozivni().equals(g)) s.add(x.getKey());
+        }
+        return s;
+    }
+    public Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
+        TreeSet<TelefonskiBroj> s = new TreeSet<>();
+        for(Map.Entry<String,TelefonskiBroj>  x : popis.entrySet()){
+            if(x.getValue() instanceof FiksniBroj && ((FiksniBroj) x.getValue()).getPozivni().equals(g)) s.add(x.getValue());
         }
         return s;
     }
