@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.tutorijal03;
 import java.util.*;
 
 public class Program {
-    public MobilniBroj unesiMobilni() {
+    public static MobilniBroj unesiMobilni() {
         System.out.println("Unesite mobilni broj:\n");
         Scanner ulaz = new Scanner(System.in);
         String s = ulaz.nextLine();
@@ -11,7 +11,8 @@ public class Program {
         MobilniBroj m = new MobilniBroj(n, s);
         return m;
     }
-    public MedunarodniBroj unesiMedunarodni() {
+    
+    public static MedunarodniBroj unesiMedunarodni() {
         System.out.println("Unesite medjunarodni broj:\n");
         Scanner ulaz = new Scanner(System.in);
         String s1 = ulaz.nextLine();
@@ -20,12 +21,13 @@ public class Program {
         MedunarodniBroj m = new MedunarodniBroj(s2, s1);
         return m;
     }
-    public FiksniBroj unesiFiksni() {
+    
+    public static FiksniBroj unesiFiksni() {
         System.out.println("Unesite fiksni broj:\n");
         Scanner ulaz = new Scanner(System.in);
         String s = ulaz.nextLine();
         System.out.println("Unesite redni broj grada:\n");
-        int redni = ulaz.nextInt();
+        String redni = ulaz.nextLine();
         FiksniBroj f = new FiksniBroj(FiksniBroj.Grad.valueOf(redni), s);
         return f;
     }
@@ -40,23 +42,20 @@ public class Program {
                 "4. Dodavanje broja u imenik: \n" +
                 "5. Nadji broj osobe: \n" +
                 "6. Nadjite brojeve imena koji pocinju sa slovom: \n" +
-                "7. Imena osoba iz grada: \n" +
+                "7. Imena osoba iz grada: \n"
                            
         );
         switch(izbor) {
             case -1:
                 System.exit(0);
             case 1:
-                MobilniBroj mobilni = new MobilniBroj(unesiMobilni());
-                System.out.println("Uneseni broj: " + mobilni.ispisi());
+                MobilniBroj mobilni = unesiMobilni();
                 break;
             case 2:
-                MedunarodniBroj medunarodni = new MedunarodniBroj(unesiMedunarodni());
-                System.out.println("Uneseni broj: " + medunarodni.ispisi());
+                MedunarodniBroj medunarodni = unesiMedunarodni();
                 break;
             case 3:
-                FiksniBroj f = new FiksniBroj(unesiFiksni());
-                System.out.println("Uneseni broj: " + fiksni.ispisi());
+                FiksniBroj f = unesiFiksni();
                 break;
             case 4:
                 Scanner ulaz = new Scanner(System.in);
@@ -69,24 +68,14 @@ public class Program {
                 else if (broj == 3) imenik.dodaj(s, unesiFiksni());
                 break;
             case 5:
-                Scanner ulaz = new Scanner(System.in);
                 System.out.println("Unesite ime osobe ciji broj trazite:\n");
-                String osoba = ulaz.nextLine();
-                System.out.println(imenik.dajBroj(osoba));
                 break;
             case 6:
-                Scanner ulaz = new Scanner(System.in);
                 System.out.println("Unesite pocetno slovo imena:\n");
-                char slovo = ulaz.next().charAt(0);
-                System.out.println(imenik.naSlovo(slovo));
                 break;
             case 7:
-                Scanner ulaz = new Scanner(System.in);
                 System.out.println("Unesite redni broj grada: \n");
-                int n = ulaz.nextInt();
-                Set<String> s = new Set<> (imenik.izGrada(FiksniBroj.Grad.valueOf(n)));
-                System.out.println(s);
                 break;
         }
-        
+    }
 }
