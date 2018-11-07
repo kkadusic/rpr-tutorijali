@@ -15,4 +15,9 @@ public class Semestar {
     public ArrayList<Predmet> getObavezni() {
         return obavezniPredmeti;
     }
+    public void DodajIzborni(){}
+    public void DodajObavezni(){}
+
+    public void UpisiStudentaNaIzborne(Student s){}
+    public void UpisiStudentaNaObavezne(Student s){}
 }
