@@ -49,6 +49,11 @@ public class Controller {
         displej.set(displej.get()+"4");
     }
 
+    public void btn55(ActionEvent actionEvent) {
+        if(displej.get()=="0" || operacija.get()=="=") displej.set("");
+        displej.set(displej.get()+"5");
+    }
+
     public void btn66(ActionEvent actionEvent) {
         if(displej.get()=="0"|| operacija.get()=="=") displej.set("");
         displej.set(displej.get()+"6");
