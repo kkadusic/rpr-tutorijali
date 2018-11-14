@@ -74,4 +74,58 @@ public class Controller {
         if(displej.get()=="0"|| operacija.get()=="=") displej.set("");
         displej.set(displej.get()+"9");
     }
+
+    public void plus(ActionEvent actionEvent) {
+        prvi_operand.set(displej.get());
+        displej.set("");
+        operacija.set("+");
+    }
+
+    public void minus(ActionEvent actionEvent) {
+        if(displej.get()=="0" || (operacija.get()!="" && operacija.get()!="=")) displej.set("-");
+        else{
+            prvi_operand.set(displej.get());
+            System.out.println(prvi_operand.get());
+            displej.set("");
+            operacija.set("-");}
+    }
+
+    public void mod(ActionEvent actionEvent) {
+        prvi_operand.set(displej.get());
+        displej.set("");
+        operacija.set("%");
+    }
+
+    public void mnozenje(ActionEvent actionEvent) {
+        prvi_operand.set(displej.get());
+        displej.set("");
+        operacija.set("*");
+    }
+
+    public void dijeljenje(ActionEvent actionEvent) {
+        prvi_operand.set(displej.get());
+        displej.set("");
+        operacija.set("/");
+    }
+
+    public void jednako(ActionEvent actionEvent) {
+        switch(operacija.get()){
+            case "-":
+                displej.set((Double.parseDouble(prvi_operand.get())-Double.parseDouble(displej.get()))+"");
+                break;
+            case "+":
+                displej.set((Double.parseDouble(prvi_operand.get())+Double.parseDouble(displej.get()))+"");
+                break;
+            case "%":
+                displej.set((Double.parseDouble(prvi_operand.get())%Double.parseDouble(displej.get()))+"");
+                break;
+            case "*":
+                displej.set((Double.parseDouble(prvi_operand.get())*Double.parseDouble(displej.get()))+"");
+                break;
+            case "/":
+                displej.set((Double.parseDouble(prvi_operand.get())/Double.parseDouble(displej.get()))+"");
+                break;
+        }
+        operacija.set("=");
+    }
 }

@@ -39,6 +39,12 @@
         <Button fx:id="btn7" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn77" text="7" GridPane.rowIndex="2" />
         <Button fx:id="btn8" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn88" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <Button fx:id="btn9" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn99" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button fx:id="plusBtn" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#plus" text="+" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+        <Button fx:id="equalsBtn" maxHeight="Infinity" maxWidth="Infinity" mnemonicParsing="false" onAction="#jednako" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" GridPane.rowSpan="2" />
+        <Button fx:id="precentBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#mod" text="\%" GridPane.rowIndex="1" />
+        <Button fx:id="dijeljenjeBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#dijeljenje" text="/" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button fx:id="mnozenjeBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#mnozenje" text="x" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button fx:id="oduzimanjeBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#minus" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 
 
     </children>
