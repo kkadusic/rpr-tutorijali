@@ -45,7 +45,8 @@
         <Button fx:id="dijeljenjeBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#dijeljenje" text="/" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <Button fx:id="mnozenjeBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#mnozenje" text="x" GridPane.columnIndex="2" GridPane.rowIndex="1" />
         <Button fx:id="oduzimanjeBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#minus" text="-" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-
+        <Button fx:id="dotBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#decimal" text="." GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <Label fx:id="display" maxWidth="Infinity" prefHeight="21.0" prefWidth="7.0" text="${controller.displej}" GridPane.columnSpan="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" />
 
     </children>
     <padding>

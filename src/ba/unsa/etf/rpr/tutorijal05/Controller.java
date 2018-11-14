@@ -128,4 +128,8 @@ public class Controller {
         }
         operacija.set("=");
     }
+
+    public void decimal(ActionEvent actionEvent) {
+        displej.set(displej.get()+".");
+    }
 }
