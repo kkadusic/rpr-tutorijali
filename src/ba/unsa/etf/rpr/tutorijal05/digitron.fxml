@@ -29,7 +29,16 @@
         <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
-
+        <Button fx:id="btn0" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn00" text="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+        <Button fx:id="btn1" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn11" text="1" GridPane.rowIndex="4" />
+        <Button fx:id="btn2" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn22" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Button fx:id="btn3" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn33" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <Button fx:id="btn4" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn44" text="4" GridPane.rowIndex="3" />
+        <Button fx:id="btn5" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn55" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button fx:id="btn6" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn66" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Button fx:id="btn7" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn77" text="7" GridPane.rowIndex="2" />
+        <Button fx:id="btn8" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn88" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button fx:id="btn9" maxWidth="Infinity" mnemonicParsing="false" onAction="#btn99" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 
 
     </children>
