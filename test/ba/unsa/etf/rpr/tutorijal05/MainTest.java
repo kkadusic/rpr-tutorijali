@@ -141,4 +141,19 @@ class MainTest {
         robot.clickOn("#equalsBtn");
         assertEquals("18.0", display.getText());
     }
+    
+    @Test
+    public void unosTackeNPuta (FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn5");
+        robot.clickOn("#dotBtn");
+        robot.clickOn("#dotBtn");
+        robot.clickOn("#dotBtn");
+        robot.clickOn("#dotBtn");
+        robot.clickOn("#btn2");
+        robot.clickOn("#plusBtn");
+        robot.clickOn("#btn1");
+        robot.clickOn("#equalsBtn");
+        assertEquals("6.2", display.getText());
+    }
 }
