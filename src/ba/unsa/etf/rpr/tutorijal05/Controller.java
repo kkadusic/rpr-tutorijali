@@ -87,7 +87,8 @@ public class Controller {
             prvi_operand.set(displej.get());
             System.out.println(prvi_operand.get());
             displej.set("");
-            operacija.set("-");}
+            operacija.set("-");
+        }
     }
 
     public void mod(ActionEvent actionEvent) {
@@ -130,6 +131,8 @@ public class Controller {
     }
 
     public void decimal(ActionEvent actionEvent) {
-        displej.set(displej.get()+".");
+        if(!(displej.get().contains("."))){
+            displej.set(displej.get() + ".");
+        }
     }
 }
