@@ -106,4 +106,39 @@ class MainTest {
         robot.clickOn("#btn0");
         assertEquals("10", display.getText());
     }
+
+    //Novi testovi
+    @Test
+    public void JedanKrozNula (FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn1");
+        robot.clickOn("#dijeljenjeBtn");
+        robot.clickOn("#btn0");
+        robot.clickOn("#equalsBtn");
+        assertEquals("Infinity", display.getText());
+    }
+
+    @Test
+    public void number0Multiplays0Equals (FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn0");
+        robot.clickOn("#mnozenjeBtn");
+        robot.clickOn("#btn0");
+        robot.clickOn("#equalsBtn");
+        assertEquals("0.0", display.getText());
+    }
+
+    @Test
+    public void number09Plus0009Equals (FxRobot robot) {
+        display = robot.lookup("#display").queryAs(Label.class);
+        robot.clickOn("#btn0");
+        robot.clickOn("#btn9");
+        robot.clickOn("#plusBtn");
+        robot.clickOn("#btn0");
+        robot.clickOn("#btn0");
+        robot.clickOn("#btn0");
+        robot.clickOn("#btn9");
+        robot.clickOn("#equalsBtn");
+        assertEquals("18.0", display.getText());
+    }
 }
