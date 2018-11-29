@@ -28,6 +28,18 @@ public class Controller {
     private boolean datumValidno;
     private boolean emailValidno;
 
+    public boolean formularValidan() {
+        return (imeValidno && prezimeValidno && indeksValidan && jmbgValidno && datumValidno && emailValidno);
+    }
+
+    private boolean ispravanDatum(String n) {
+        for (int i = 0; i < n.length(); i++) {
+            if (n.charAt(i) >= '0' && n.charAt(i) <= '9') {
+                for (int j = 0; j < n.length(); j++) if(n.charAt(j) == '/' || n.charAt(j) == '.') return true;
+            }
+        }
+        return false;
+    }
 
 
 }
