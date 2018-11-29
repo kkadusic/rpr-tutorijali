@@ -61,12 +61,16 @@ public class Controller {
     }
 
     private boolean ispravanEmail(String n) {
-        for (int i = 0; i < n.length(); i++) if (n.charAt(i) == '@') return true;
+        int vel = n.length()-4;
+        for (int i = 0; i < n.length(); i++) {
+            if (n.charAt(i) == '@' && n.charAt(vel) == '.') return true;
+        }
         return false;
     }
 
     private boolean ispravanIndex(String n) {
         if (n.length() > 5) return false;
+        if (n.length() < 5) return false;
         for (int i = 0; i < n.length(); i++) if (!(n.charAt(i) >= '0' && n.charAt(i) <= '9')) return false;
         return !n.trim().isEmpty();
     }
