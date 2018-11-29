@@ -41,5 +41,34 @@ public class Controller {
         return false;
     }
 
+    private boolean ispravnoImeiPrezime(String n) {
+        if (n.length() < 1 || n.length() > 20) return false;
+        for (int i = 0; i < n.length(); i++) {
+            if (!(n.charAt(i) >= 'A' && n.charAt(i) <= 'Z') && !(n.charAt(i) >= 'a' && n.charAt(i) <= 'z'))
+                return false;
+        }
+        return !n.trim().isEmpty();
+    }
+
+
+    private boolean ispravanJMBG(String n) {
+        if (n.length() != 13) return false;
+        for (int i = 0; i < n.length(); i++) {
+            if (!(n.charAt(i) >= '0' && n.charAt(i) <= '9')) return false;
+        }
+        return !n.trim().isEmpty();
+    }
+
+    private boolean ispravanEmail(String n) {
+        for (int i = 0; i < n.length(); i++) if (n.charAt(i) == '@') return true;
+        return false;
+    }
+
+    private boolean ispravanIndex(String n) {
+        if (n.length() > 5) return false;
+        for (int i = 0; i < n.length(); i++) if (!(n.charAt(i) >= '0' && n.charAt(i) <= '9')) return false;
+        return !n.trim().isEmpty();
+    }
+
 
 }
