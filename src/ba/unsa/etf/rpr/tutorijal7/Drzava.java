@@ -1,13 +1,24 @@
 package ba.unsa.etf.rpr.tutorijal7;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Drzava {
+public class Drzava implements Serializable {
     private String naziv;
-    private int brojStanovnika;
-    private double povrsina;
+    private Integer brojStanovnika;
+    private Double povrsina;
     private String jedinicaZaPovrsinu;
     private Grad glavniGrad;
+    //kad bi se koristio npr. double za atribut onda bi moralo ovako u konstruktoru
+    //this.povrsina = Double.parseDouble(null);
+
+    public Drzava() {
+        this.naziv = null;
+        this.brojStanovnika = null;
+        this.povrsina = null;
+        this.jedinicaZaPovrsinu = null;
+        this.glavniGrad = null;
+    }
 
     public String getNaziv() {
         return naziv;

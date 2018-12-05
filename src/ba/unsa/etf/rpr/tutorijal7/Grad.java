@@ -1,20 +1,23 @@
 package ba.unsa.etf.rpr.tutorijal7;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Grad {
+public class Grad implements Serializable {
     private String naziv;
-    private int brojStanovnika;
+    private Integer brojStanovnika;
     private double[] temperature;
 
-    public Grad(String naziv, int brojStanovnika, double[] temperature) {
+    public Grad() {
+        this.naziv = null;
+        this.brojStanovnika = null;
+        this.temperature = new double[1000];
+    }
+
+    public Grad(String naziv, Integer brojStanovnika, double[] temperature) {
         this.naziv = naziv;
         this.brojStanovnika = brojStanovnika;
         this.temperature = temperature;
-    }
-
-    public Grad() {
-        this.temperature = new double[1000];
     }
 
     public String getNaziv() {
@@ -40,4 +43,5 @@ public class Grad {
     public void setTemperature(double[] temperature) {
         this.temperature = temperature;
     }
+
 }
