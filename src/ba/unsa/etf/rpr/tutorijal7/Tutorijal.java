@@ -1,7 +1,15 @@
 package ba.unsa.etf.rpr.tutorijal7;
 
+import java.beans.XMLEncoder;
 import java.util.*;
 import java.io.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 public class Tutorijal {
 
@@ -35,6 +43,16 @@ public class Tutorijal {
         }
 
         return niz;
+    }
+
+    public static void zapisiXml(UN un) {
+        try {
+            XMLEncoder izlaz = new XMLEncoder(new FileOutputStream("un.xml"));
+            izlaz.writeObject(un);
+            izlaz.close();
+        } catch(Exception e) {
+            System.out.println("Greska: "+e);
+        }
     }
 
 }
