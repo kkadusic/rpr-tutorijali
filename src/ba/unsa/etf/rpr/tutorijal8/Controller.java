@@ -46,6 +46,27 @@ public class Controller {
         progressIndicator.setProgress(0);
     }
 
+    public void nadjiFajlove(File f) {
+        if (prekidanje) return;
+        try {
+            File[] files = f.listFiles();
+            if (files == null) return;
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    nadjiFajlove(file);
+                } else {
+                    if (file.getCanonicalPath().toLowerCase().contains(searchField.getText().toLowerCase())) {
+                        String result = file.getCanonicalPath();
+                        Platform.runLater(() -> {
+                            list.getItems().add(result);
+                        });
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
