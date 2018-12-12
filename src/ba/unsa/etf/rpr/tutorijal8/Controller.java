@@ -68,5 +68,35 @@ public class Controller {
         }
     }
 
+    public void clickOnSearchBtn(ActionEvent actionEvent) {
+        Runnable r = () -> nadjiFajlove(new File(System.getProperty("user.home")));
+        Thread thread = new Thread(r);
+        thread.start();
+        initialize();
+        Runnable r1 = () -> {
+            searchBtn.setDisable(true);
+            searchField.setDisable(true);
+            stopButton.setDisable(false);
+            nadjiFajlove(new File(System.getProperty("user.home")));
+        };
+        Runnable r2 = () -> {
+            for (int i = 1; i <= 1000; i++) {
+                if (prekidanje) {
+                    progressIndicator.setProgress(0);
+                    break;
+                }
+                progressIndicator.setProgress(i / 1000.0);
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread1 = new Thread(r1);
+        thread2 = new Thread(r2);
+        thread1.start();
+        thread2.start();
+    }
 
 }
