@@ -41,7 +41,7 @@ public class Controller {
         searchField.textProperty().bindBidirectional(text);
         list.itemsProperty().bindBidirectional(lista);
         lista.set(FXCollections.observableArrayList(result1));
-        stopButton.setDisable(true);
+        //stopButton.setDisable(true);
         prekidanje = false;
         progressIndicator.setProgress(0);
     }
@@ -76,7 +76,7 @@ public class Controller {
         Runnable r1 = () -> {
             searchBtn.setDisable(true);
             searchField.setDisable(true);
-            stopButton.setDisable(false);
+            //stopButton.setDisable(false);
             nadjiFajlove(new File(System.getProperty("user.home")));
         };
         Runnable r2 = () -> {
@@ -98,5 +98,4 @@ public class Controller {
         thread1.start();
         thread2.start();
     }
-
 }
