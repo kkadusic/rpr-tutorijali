@@ -28,6 +28,7 @@
         <TextField fx:id="searchField" prefHeight="25.0" prefWidth="299.0" GridPane.columnIndex="1" />
         <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#clickOnSearchBtn" prefHeight="25.0" prefWidth="87.0" text="Traži" textFill="#1619d7" GridPane.columnIndex="2" />
         <ListView fx:id="list" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1" />
+        <Button fx:id="stopButton" mnemonicParsing="false" onAction="#clickOnStopButton" prefHeight="25.0" prefWidth="60.0" text="Zaustavi" textFill="#d72323" GridPane.columnIndex="3" />
       <ProgressIndicator fx:id="progressIndicator" prefWidth="20.0" progress="0.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
       <Label prefHeight="17.0" prefWidth="374.0" text="Unesite podstring datoteke i pritisnite na dugme &quot;Traži&quot;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
