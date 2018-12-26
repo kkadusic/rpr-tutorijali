@@ -7,6 +7,10 @@ public class GeografijaDAO {
     private static GeografijaDAO instance = null;
     private static Connection conn;
 
+    public static Connection getConn() {
+        return conn;
+    }
+
     public GeografijaDAO() {
         conn = null;
         try {
@@ -229,6 +233,15 @@ public class GeografijaDAO {
         }
     }
 
+    private static void obrisiTabele() throws SQLException {
+        String sql = "DROP TABLE gradovi";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.execute();
+        sql = "DROP TABLE drzave";
+        stmt = conn.prepareStatement(sql);
+        stmt.execute();
+    }
+
 
     public Grad glavniGrad(String drzava) {
         Grad g = new Grad();
@@ -287,6 +300,25 @@ public class GeografijaDAO {
         }
         return null;
     }
+
+    public ArrayList<Drzava> drzave() {
+        ArrayList<Drzava> rezultat = new ArrayList<Drzava>();
+        try {
+            PreparedStatement stmt = conn.prepareStatement("SELECT id, naziv, glavniGrad FROM drzave");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Drzava d = new Drzava();
+                d.setId(rs.getInt(1));
+                d.setNaziv(rs.getString(2));
+                rezultat.add(d);
+            }
+            return rezultat;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
 
     public Grad nadjiGradPoIDu(Integer id) {
         Grad g = new Grad();
