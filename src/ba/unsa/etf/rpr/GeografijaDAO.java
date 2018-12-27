@@ -304,7 +304,7 @@ public class GeografijaDAO {
     public ArrayList<Drzava> drzave() {
         ArrayList<Drzava> rezultat = new ArrayList<Drzava>();
         try {
-            PreparedStatement stmt = conn.prepareStatement("SELECT id, naziv, glavniGrad FROM drzave");
+            PreparedStatement stmt = conn.prepareStatement("SELECT id, naziv, glavniGrad FROM Drzava");
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Drzava d = new Drzava();
