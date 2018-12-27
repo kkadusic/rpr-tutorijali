@@ -28,6 +28,7 @@ public class DrzavaController implements Initializable {
         drzavaCombo.setItems(listaDrzava);
     }
 
+    //prema predavanju
     public void kreirajIzvjestaj(ActionEvent actionEvent) {
         GradoviReport gradoviReport = new GradoviReport();
         try {

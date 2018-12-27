@@ -37,12 +37,9 @@ public class GlavniController implements Initializable {
 
     private ResourceBundle bundle;
 
-    public void handleKeyInput(KeyEvent keyEvent) {
-
-    }
-
     public void saveAction(ActionEvent actionEvent) throws IOException {
         FileChooser fileChooser = new FileChooser();
+        //da skontamo koju putanju je odabrao
 
         FileChooser.ExtensionFilter extFilter1 = new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf");
         FileChooser.ExtensionFilter extFilter2 = new FileChooser.ExtensionFilter("DOCX files (*.docx)", "*.docx");
@@ -80,7 +77,6 @@ public class GlavniController implements Initializable {
         nazivColumn.setCellValueFactory(new PropertyValueFactory("naziv"));
         brojStanovnikaColumn.setCellValueFactory(new PropertyValueFactory("brojStanovnika"));
         drzavaColumn.setCellValueFactory(new PropertyValueFactory("drzava"));
-
         for (Grad g : gradovi) {
             listaGradova.add(g);
         }
@@ -91,6 +87,7 @@ public class GlavniController implements Initializable {
         System.out.println("Language: Bosnian");
         Locale.setDefault(new Locale("bs", "BA"));
         try {
+            //loadView osvjezava formu sa novim jezikom
             Main.loadView(Locale.getDefault());
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -127,7 +124,7 @@ public class GlavniController implements Initializable {
         }
     }
 
-
+    //prema predavanju
     public void viewReportAction(ActionEvent actionEvent) {
         GradoviReport gradoviReport = new GradoviReport();
         try {
