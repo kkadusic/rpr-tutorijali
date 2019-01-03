@@ -48,7 +48,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
         ResourceBundle bundle = ResourceBundle.getBundle("Translation");
-        Parent root = FXMLLoader.load(getClass().getResource("glavna.fxml"), bundle);
+
+        Parent root = FXMLLoader.load(getClass().getResource("/glavna.fxml"), bundle);
         stage.setTitle("Drzave");
         stage.setScene(new Scene(root, 640, 400));
         stage.show();
@@ -56,7 +57,7 @@ public class Main extends Application {
 
     public static void loadView(Locale locale) throws IOException {
         ResourceBundle bundle = ResourceBundle.getBundle("Translation", locale);
-        Parent root = FXMLLoader.load(Main.class.getResource("glavna.fxml"), bundle);
+        Parent root = FXMLLoader.load(Main.class.getResource("/glavna.fxml"), bundle);
         stage.setTitle("Drzave");
         stage.setScene(new Scene(root, 640, 400));
         stage.show();

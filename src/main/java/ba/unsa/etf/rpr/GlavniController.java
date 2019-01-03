@@ -11,12 +11,10 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JRException;
 import org.apache.commons.io.FilenameUtils;
-import org.jfree.io.FileUtilities;
 
 import java.io.File;
 import java.io.IOException;

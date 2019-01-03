@@ -14,7 +14,7 @@ public class GeografijaDAO {
     public GeografijaDAO() {
         conn = null;
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:resources/baza.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:baza.db");
             generisiBazu();
         } catch (SQLException e) {
             System.out.println("Neuspjesno citanje iz baze: " + e.getMessage());
