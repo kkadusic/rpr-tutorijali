@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="10.0.2" class="java.beans.XMLDecoder">
+ <object class="ba.unsa.etf.rpr.tutorijal7.UN" id="UN0">
+  <void property="drzave">
+   <void method="add">
+    <object class="ba.unsa.etf.rpr.tutorijal7.Drzava">
+     <void property="glavniGrad">
+      <object class="ba.unsa.etf.rpr.tutorijal7.Grad">
+       <void property="naziv">
+        <string>Sarajevo</string>
+       </void>
+       <void property="temperature">
+        <null/>
+       </void>
+      </object>
+     </void>
+     <void property="jedinicaZaPovrsinu">
+      <string>km2</string>
+     </void>
+     <void property="naziv">
+      <string>Bosna i Hercegovina</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ba.unsa.etf.rpr.tutorijal7.Drzava">
+     <void property="glavniGrad">
+      <object class="ba.unsa.etf.rpr.tutorijal7.Grad">
+       <void property="naziv">
+        <string>Berlin</string>
+       </void>
+       <void property="temperature">
+        <null/>
+       </void>
+      </object>
+     </void>
+     <void property="jedinicaZaPovrsinu">
+      <string>km2</string>
+     </void>
+     <void property="naziv">
+      <string>Njemacka</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
