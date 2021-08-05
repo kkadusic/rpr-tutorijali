@@ -1,4 +1,4 @@
-# Introduction to Java - Simple Tutorials
+# Introduction to Java - Tutorials
 
 This repository contains Java programs and simple desktop apps made using JavaFX as a part of a university course. Other included tools 
 are SQLite database, JasperReports, Java ResourceBundle (for internationalization), and Maven.
