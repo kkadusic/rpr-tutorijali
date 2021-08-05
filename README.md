@@ -1,6 +1,6 @@
 # Introduction to Java - Tutorials
 
-This repository contains Java programs and simple desktop apps made using JavaFX framework as a part of a university course. Other included tools 
+This repository contains Java programs and simple desktop apps made using JavaFX framework as a part of a university course. Other used tools 
 are SQLite database, JasperReports, Java ResourceBundle (for internationalization), and Maven.
 
 ## How To Use :wrench:
